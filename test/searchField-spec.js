@@ -1,6 +1,6 @@
 var assert = require('assert'),
     webdriver = require('selenium-webdriver'),
-    makeSuite = require('./helpers').makeSuite;
+    makeSuite = require('../util/helpers').makeSuite;
 
 makeSuite('Enter a value in the search field', function() {
 

@@ -1,8 +1,9 @@
 'use strict';
+var os = require('os');
 
 module.exports = function (grunt) {
     // configure tasks
-    grunt.initConfig({
+    grunt.initConfig({        
         mocha_parallel: {
             options: {
                 args: function(suiteName) {
@@ -24,7 +25,9 @@ module.exports = function (grunt) {
                 },
                 done: function(success, results) {
                 },
-                mocha: './node_modules/.bin/mocha'
+                mocha: './node_modules/.bin/mocha',
+                //this is the default concurrency, change as needed.
+                concurrency: os.cpus().length * 1.5
             }
         },
         
@@ -43,13 +46,13 @@ module.exports = function (grunt) {
     // load tasks
     grunt.loadNpmTasks('grunt-mocha-parallel');
     grunt.loadNpmTasks('grunt-parallel');
-
+    
     grunt.registerTask('Windows10_edge', function(n) {
       grunt.option('browser', 'microsoftedge');
       grunt.option('version', '20.10240');
       grunt.option('platform', "Windows 10");
     });
-
+    
     grunt.registerTask('Windows7_ie_10', function(n) {
       grunt.option('browser', 'internet explorer');
       grunt.option('version', '10');
@@ -73,7 +76,7 @@ module.exports = function (grunt) {
       grunt.option('version', 8);
       grunt.option('platform', "OS X 10.10");
     });
-
+    
     // register tasks
     grunt.registerTask('default', ['parallel']);
 
