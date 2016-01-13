@@ -1,6 +1,6 @@
 var assert = require('assert'),
     webdriver = require('selenium-webdriver'),
-    makeSuite = require('./helpers').makeSuite;
+    makeSuite = require('../util/helpers').makeSuite;
 
 makeSuite('Go to NFL.com', function() {
 

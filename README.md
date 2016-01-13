@@ -1,8 +1,9 @@
 # Description
 Uses the following technologies / packages
--   mocha (https://mochajs.org/)
--   grunt-mocha-parallel (https://www.npmjs.com/package/grunt-mocha-parallel) for parallel execution of test suites
--   grunt-parallel (https://github.com/iammerrick/grunt-parallel) for parallel execution against multilevel browser / OS configurations.
+-   [mocha](https://mochajs.org/)
+-   [grunt-mocha-parallel](https://www.npmjs.com/package/grunt-mocha-parallel) for parallel execution of test suites
+-   [grunt-parallel](https://github.com/iammerrick/grunt-parallel) for parallel execution against multilevel browser / OS configurations.
+-   [grunt-cli](https://github.com/gruntjs/grunt-cli) for command line execution used by CI or build scripts. 
 
 # Usage
 
@@ -11,18 +12,15 @@ Uses the following technologies / packages
 $ export SAUCE_USERNAME=sauce_username
 $ export SAUCE_ACCESS_KEY=sauce_access_key
 ```
-
-## Install Grunt
+## Set Build ID (optional):
 ```
-$ npm install -g grunt-cli # use sudo if necessary
+$ export BUILD_TAG=sauce_automated_build_name
 ```
-
-## Download Node Modules:
+## Install Node Modules:
 ```
 $ npm install
 ```
-
 ## Run the tests:
 ```
-$ grunt
+$ npm test
 ```
