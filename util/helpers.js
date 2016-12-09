@@ -14,7 +14,7 @@ var username,
 function setSauceEnv(){
     username = process.env.SAUCE_USERNAME;
     accessKey = process.env.SAUCE_ACCESS_KEY;
-    buildTag = process.env.BUILD_TAG;
+    buildTag = process.env.BUILD_TAG || process.env.SAUCE_BUILD_NAME;
     tunnelId = process.env.TUNNEL_IDENTIFIER;
     //making sure we have some username and access key
     if (username == undefined || accessKey == undefined){
