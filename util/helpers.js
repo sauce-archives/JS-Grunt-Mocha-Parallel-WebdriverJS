@@ -32,8 +32,8 @@ function beforeEachExample() {
     var browser = process.env.BROWSER,
         version = process.env.VERSION,
         platform = process.env.PLATFORM,
-        server = "https://" + username + ":" + accessKey +
-        "@ondemand.saucelabs.com:443/wd/hub";
+        server = "http://" + username + ":" + accessKey +
+        "@ondemand.saucelabs.com:80/wd/hub";
 
     var desiredCaps = {
         'browserName': browser,
