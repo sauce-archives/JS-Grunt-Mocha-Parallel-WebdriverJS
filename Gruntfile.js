@@ -1,5 +1,6 @@
 'use strict';
 var os = require('os');
+var path = require('path');
 
 module.exports = function (grunt) {
     // configure tasks
@@ -25,7 +26,7 @@ module.exports = function (grunt) {
                 },
                 done: function(success, results) {
                 },
-                mocha: './node_modules/.bin/mocha',
+                mocha: path.join('node_modules', '.bin', 'mocha') + (/win32/.test(os.platform()) ? '.cmd' : ''),
                 //this is the default concurrency, change as needed.
                 concurrency: os.cpus().length * 1.5
             }
