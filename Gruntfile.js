@@ -49,8 +49,8 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-parallel');
     
     grunt.registerTask('Windows10_edge', function(n) {
-      grunt.option('browser', 'microsoftedge');
-      grunt.option('version', '20.10240');
+      grunt.option('browser', 'MicrosoftEdge');
+      grunt.option('version', '14.14393');
       grunt.option('platform', "Windows 10");
     });
     
